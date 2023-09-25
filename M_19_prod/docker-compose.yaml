@@ -9,7 +9,7 @@ services:
       - gunicorn
       - mysite.wsgi:application
       - --bind
-      - "cd "
+      - 0.0.0.0:8000
     ports:
       - "8000:8000"
     restart: always
@@ -20,6 +20,5 @@ services:
       options:
         max-file: "10"
         max-size: "200k"
-
     volumes:
       - ./mysite/database:/app/database

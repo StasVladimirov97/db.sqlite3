@@ -180,7 +180,7 @@ LOGLEVEL = getenv("DJANGO_LOGLEVEL", "info").upper()
 logging.config.dictConfig({
     "version":1,
     "disable_existing_loggers": False,
-    "formaters": {
+    "formatters": {
         "console": {
             "format": "%(asctime)s %(levelname)s [%(name)s:%(lineno)s] %(module)s %(message)s",
 
@@ -190,13 +190,13 @@ logging.config.dictConfig({
     "handlers": {
         "console":{
             "class": "logging.StreamHandler",
-            "formatter": "console",
+            "formatter": 'console',
         },
     },
     "loggers": {
         "": {
             "level": LOGLEVEL,
-            "handlers": ["console", ]
+            "handlers": ['console', ],
         },
     },
 })
